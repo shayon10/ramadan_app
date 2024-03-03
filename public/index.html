@@ -1,0 +1,79 @@
+// src/views/Home/Home.js
+
+import React, { useState, useEffect } from 'react';
+import Calendar from '../../components/Calendar/Calendar';
+import PrayerTimes from '../../components/PrayerTimes/PrayerTimes';
+import QuranReading from '../../components/QuranReading/QuranReading';
+import HadithTips from '../../components/HadithTips/HadithTips';
+import { getPrayerTimes } from '../../services/api';
+
+function Home() {
+  const [ramadanTimings, setRamadanTimings] = useState({});
+  const [sahariTimings, setSahariTimings] = useState({});
+  const [iftarTimings, setIftarTimings] = useState({});
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1;
+
+    // Fetch Ramadan prayer times
+    getPrayerTimes(year, month, 51.508515, -0.1254872, 2)
+      .then((data) => {
+        const todayData = data.data.find(dayData => dayData.date.gregorian.day === currentDate.getDate());
+        setRamadanTimings(todayData.timings);
+      });
+
+    // Fetch Sahari prayer times
+    getPrayerTimes(year, month, 51.508515, -0.1254872, 2) // You may need a different method for Sahari
+      .then((data) => {
+        const todayData = data.data.find(dayData => dayData.date.gregorian.day === currentDate.getDate());
+        setSahariTimings(todayData.timings);
+      });
+
+    // Fetch Iftar prayer times
+    getPrayerTimes(year, month, 51.508515, -0.1254872, 2) // You may need a different method for Iftar
+      .then((data) => {
+        const todayData = data.data.find(dayData => dayData.date.gregorian.day === currentDate.getDate());
+        setIftarTimings(todayData.timings);
+      });
+  }, []);
+
+  return (
+    <div className="home-container">
+      <h1>Welcome to Ramadan App</h1>
+
+      {/* Ramadan Timings */}
+      <div className="section-container">
+        <h2>Ramadan Timings</h2>
+        <PrayerTimes timings={ramadanTimings} />
+      </div>
+
+      {/* Sahari Timings */}
+      <div className="section-container">
+        <h2>Sahari Timings</h2>
+        <PrayerTimes timings={sahariTimings} />
+      </div>
+
+      {/* Iftar Timings */}
+      <div className="section-container">
+        <h2>Iftar Timings</h2>
+        <PrayerTimes timings={iftarTimings} />
+      </div>
+
+      {/* Quran Reading */}
+      <div className="section-container">
+        <h2>Read the Quran</h2>
+        <QuranReading />
+      </div>
+
+      {/* Hadith Tips */}
+      <div className="section-container">
+        <h2>Hadith Tips</h2>
+        <HadithTips />
+      </div>
+    </div>
+  );
+}
+
+export default Home;

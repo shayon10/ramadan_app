@@ -1,0 +1,31 @@
+/* src/views/Settings/Settings.css */
+
+.settings-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .settings-container h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .method-selection {
+    margin-bottom: 20px;
+  }
+  
+  .method-selection label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .method-selection select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+  }
+  

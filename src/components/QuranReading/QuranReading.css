@@ -1,0 +1,22 @@
+/* src/components/QuranReading/QuranReading.css */
+
+.quran-reading-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .quran-reading-container h2 {
+    color: #333;
+  }
+  
+  .pdf-container {
+    margin-top: 15px;
+  }
+  
+  .pdf-container iframe {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  

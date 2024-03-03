@@ -1,0 +1,49 @@
+/* src/views/Home/Home.css */
+
+.home-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .home-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .section-container {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  .section-container h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for PrayerTimes component */
+  .prayer-times-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Styles for QuranReading component */
+  .quran-reading-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Styles for HadithTips component */
+  .hadith-tips-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  

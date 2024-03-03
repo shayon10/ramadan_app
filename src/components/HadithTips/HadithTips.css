@@ -1,0 +1,22 @@
+/* src/components/HadithTips/HadithTips.css */
+
+.hadith-tips-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .hadith-tips-container h2 {
+    color: #333;
+  }
+  
+  .pdf-container {
+    margin-top: 15px;
+  }
+  
+  .pdf-container iframe {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
